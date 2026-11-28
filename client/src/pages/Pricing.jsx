@@ -194,24 +194,12 @@ function Pricing() {
 
               {!plan.default &&
                 <button
-                disabled={loadingPlan === plan.id}
+                  disabled={true}
                   onClick={(e) => {
                     e.stopPropagation();
-                    if (!isSelected) {
-                      setSelectedPlan(plan.id)
-                    } else {
-                      handlePayment(plan)
-                    }
-                  }} className={`w-full mt-8 py-3 rounded-xl font-semibold transition ${isSelected
-                    ? "bg-emerald-600 text-white hover:opacity-90"
-                    : "bg-gray-100 text-gray-700 hover:bg-emerald-50"
-                    }`}>
-                  {loadingPlan === plan.id
-                    ? "Processing..."
-                    : isSelected
-                      ? "Proceed to Pay"
-                      : "Select Plan"}
-
+                  }}
+                  className={`w-full mt-8 py-3 rounded-xl font-semibold transition cursor-not-allowed bg-gray-100 text-gray-400`}>
+                  🚀 Coming Soon
                 </button>
               }
             </motion.div>

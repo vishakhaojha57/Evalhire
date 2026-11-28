@@ -11,7 +11,7 @@ import InterviewHistory from './pages/InterviewHistory'
 import Pricing from './pages/Pricing'
 import InterviewReport from './pages/InterviewReport'
 
-export const ServerUrl  = "http://localhost:8000"
+export const ServerUrl = import.meta.env.VITE_SERVER_URL || "http://localhost:8000"
 
 function App() {
 
@@ -45,3 +45,4 @@ function App() {
 }
 
 export default App
+

@@ -1,6 +1,6 @@
 import Payment from "../models/payment.model.js";
 import User from "../models/user.model.js";
-import razorpay from "../services/razorpay.service.js";
+import getRazorpay from "../services/razorpay.service.js";
 import crypto from "crypto"
 
 export const createOrder = async (req,res) => {
@@ -16,6 +16,7 @@ export const createOrder = async (req,res) => {
       receipt: `receipt_${Date.now()}`,
     };
 
+    const razorpay = getRazorpay()
     const order = await razorpay.orders.create(options)
 
      await Payment.create({

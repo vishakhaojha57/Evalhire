@@ -25,8 +25,8 @@ function Auth({isModel = false}) {
 
             
         } catch (error) {
+            // Only log — do NOT clear existing session if popup is closed or fails
             console.log(error)
-              dispatch(setUserData(null))
         }
     }
   return (
